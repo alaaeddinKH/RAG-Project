@@ -15,6 +15,9 @@ $ conda create -n (env-name) python=3.8
 ```bash
 $ conda activate (env-name)
 ```
+### Optional
 
-
-
+setup your command line to better readablity
+```bash
+export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
+```
