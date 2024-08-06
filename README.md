@@ -21,3 +21,16 @@ setup your command line to better readablity
 ```bash
 export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$ "
 ```
+
+## Installation:
+
+### install the reguirements packages
+```bash
+$ pip install -r requirements.txt
+```
+
+### Setup the environments vairables:
+```bash
+$ cp .env.example .env
+```
+Then set the environment vairables in the .env file.
