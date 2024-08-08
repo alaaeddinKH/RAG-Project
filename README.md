@@ -34,3 +34,9 @@ $ pip install -r requirements.txt
 $ cp .env.example .env
 ```
 Then set the environment vairables in the .env file.
+
+## Run the FastAPI server by
+```bash
+$ uvicorn main:app --reload
+```
+
