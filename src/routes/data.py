@@ -15,6 +15,6 @@ async def upload_data(project_id: str, file:UploadFile,
 
 
     # validate the file prop like extension or size
-    is_valid = DataController().validate_upload_file(file=file)
+    is_valid, result_signal = DataController().validate_upload_file(file=file)
 
-    return is_valid
+    return {'signal': result_signal}
