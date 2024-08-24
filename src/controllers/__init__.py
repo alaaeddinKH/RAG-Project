@@ -1,2 +1,2 @@
 from .DataController import DataController
-from .ProjectControler import ProjectControler
+from .ProjectController import ProjectControler
