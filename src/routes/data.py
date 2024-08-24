@@ -1,7 +1,9 @@
-from fastapi import FastAPI, APIRouter, Depends, UploadFile
+from fastapi import FastAPI, APIRouter, Depends, UploadFile, status
+from fastapi.responses import JSONResponse  
 import os
 from src.helpers.config import get_settings, Settings
 from src.controllers import DataController
+from src.controllers import ProjectControler
 
 
 data_router = APIRouter(
@@ -17,4 +19,6 @@ async def upload_data(project_id: str, file:UploadFile,
     # validate the file prop like extension or size
     is_valid, result_signal = DataController().validate_upload_file(file=file)
 
-    return {'signal': result_signal}
+    return {'signal', result_signal}
+
+    project_dir_path = ProjectControler().get_project_path(project_id=project_id)
