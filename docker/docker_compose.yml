@@ -1,0 +1,20 @@
+services:
+  mangodb:
+    image: mongo:latest
+
+    container_name: mangodb
+
+    ports:
+      - "27007:27017"
+
+    volumes:
+      - ./mangodb:/data/db
+
+    networks:
+      - backend
+
+    restart: always
+
+networks:
+  backend:
+
