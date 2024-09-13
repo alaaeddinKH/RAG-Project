@@ -28,3 +28,17 @@ class ProjectModel(BaseDataModel):
             return project
         
         return Project(**record)
+    
+    async def get_all_project(self, page: int=1, page_size: int=20):
+        total_documents = await self.collection.count_documents({})
+
+        total_pages = total_documents // page_size
+        if total_documents%page_size>0:
+            total_pages+=1
+        cursor = self.collection.find().skip((page-1)* page_size).limit(page_size)
+        projects = []
+        async for document in cursor:
+            projects.append(
+                Project(**document)
+            )
+        return projects, total_pages
