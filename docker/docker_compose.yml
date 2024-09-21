@@ -10,6 +10,10 @@ services:
     volumes:
       - ./mangodb:/data/db
 
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWARD=${MONGO_INITDB_ROOT_PASSWARD}
+
     networks:
       - backend
 
